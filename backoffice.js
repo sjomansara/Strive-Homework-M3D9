@@ -40,7 +40,7 @@ const handleSubmit = async function(event) {
         const response = await fetch(url, {
             method,
             body: JSON.stringify(newProduct),
-            headers:{
+            headers: {
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFkMGNkODJkNTI2MjAwMTViNmRkMTEiLCJpYXQiOjE2MjkzNzY4MTQsImV4cCI6MTYzMDU4NjQxNH0.p_v_v7utMuljc6yzUrCSDzJcKRZo0AJojKtFAuA9528",
                 "Content-Type": "application/json",
             }
@@ -76,7 +76,7 @@ window.onload = async () => {
 
     const response = await fetch(endpointString, {
         method: "GET",
-        headers:{
+        headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFkMGNkODJkNTI2MjAwMTViNmRkMTEiLCJpYXQiOjE2MjkzNzY4MTQsImV4cCI6MTYzMDU4NjQxNH0.p_v_v7utMuljc6yzUrCSDzJcKRZo0AJojKtFAuA9528"
         }
     })
@@ -92,3 +92,4 @@ window.onload = async () => {
         document.getElementById("image").value = productDetails.imageUrl
     }
 }
+
