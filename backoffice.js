@@ -1,4 +1,5 @@
 const params = new URLSearchParams(location.search)
+const productId = params.get("id") // the product ID
 
 let results = []
 
@@ -65,7 +66,7 @@ window.onload = async () => {
 
     if (productId) {
         editPage.innerText = "Edit Product"
-        span.innerText = "Edit"
+        span.innerText = "Save"
     }
 
     let endpointString = "https://striveschool-api.herokuapp.com/api/product/"
