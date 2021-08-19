@@ -33,3 +33,13 @@ hr {
     position: absolute;
     left: 175px;
 }
+
+#detailCard {
+    width: 500px;
+    height: 225px;
+}
+
+#detailImg {
+    max-width: 500px;
+    max-height: auto;
+}
