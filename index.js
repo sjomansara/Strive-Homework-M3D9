@@ -39,7 +39,7 @@ const displayProduct = (products) => {
           <p class="card-text">Brand: ${product.brand}</p>
           <p class="card-text">Description: ${product.description}</p>
           <p class="card-text">Price: ${product.price} €</p>
-          <button type="button" class="btn btn-warning" id="editButton">Edit</button>
+          <a href="backoffice.html?id=${product._id}" class="btn btn-warning" id="editButton">Edit</a>
           <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
         </div>
         </div>`

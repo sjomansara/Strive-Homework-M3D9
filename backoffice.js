@@ -1,3 +1,5 @@
+const params = new URLSearchParams(location.search)
+
 let results = []
 
 const getProduct = async (url) => {
@@ -50,5 +52,42 @@ const handleSubmit = async function(event) {
         console.log(error)
     }finally{
         console.log("Product submitted")
+    }
+}
+
+const productId = params.get("id") // the product ID
+
+window.onload = async () => {
+    const submitButton = document.getElementById("submitButton")
+
+    let editPage = document.getElementById("editPage")
+    let span = submitButton.querySelector("span")
+
+    if (productId) {
+        editPage.innerText = "Edit Product"
+        span.innerText = "Edit"
+    }
+
+    let endpointString = "https://striveschool-api.herokuapp.com/api/product/"
+    if (productId) {
+        endpointString += productId
+    }
+
+    const response = await fetch(endpointString, {
+        method: "GET",
+        headers:{
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFkMGNkODJkNTI2MjAwMTViNmRkMTEiLCJpYXQiOjE2MjkzNzY4MTQsImV4cCI6MTYzMDU4NjQxNH0.p_v_v7utMuljc6yzUrCSDzJcKRZo0AJojKtFAuA9528"
+        }
+    })
+
+    const productDetails = await response.json()
+    console.log(productDetails)
+    
+    if (productDetails) {
+        document.getElementById("name").value = productDetails.name
+        document.getElementById("description").value = productDetails.description
+        document.getElementById("brand").value = productDetails.brand
+        document.getElementById("price").value = productDetails.price
+        document.getElementById("image").value = productDetails.imageUrl
     }
 }
