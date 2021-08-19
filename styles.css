@@ -26,5 +26,10 @@ hr {
 
 .card {
     width: 250px;
-    height: 470px;
+    height: 500px;
+}
+
+#editButton {
+    position: absolute;
+    left: 175px;
 }
