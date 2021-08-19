@@ -84,7 +84,7 @@ window.onload = async () => {
     const productDetails = await response.json()
     console.log(productDetails)
     
-    if (productDetails) {
+    if (productId) {
         document.getElementById("name").value = productDetails.name
         document.getElementById("description").value = productDetails.description
         document.getElementById("brand").value = productDetails.brand
