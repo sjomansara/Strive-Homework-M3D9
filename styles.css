@@ -1,0 +1,30 @@
+body {
+    background-color: #232F3E;
+}
+
+#submitButton {
+    background-color: #f3a847 !important;
+    color: #232F3E;
+}
+
+#amazonImg {
+    width: 200px;
+}
+
+.navbar {
+    background-color: #131921 !important;
+}
+
+hr {
+    border-color: #232F3E;
+}
+
+#cardImg {
+    max-width: 200px;
+    height: 200px;
+}
+
+.card {
+    width: 250px;
+    height: 470px;
+}
