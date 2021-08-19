@@ -22,7 +22,7 @@ const getProduct = async (url) => {
 const handleSubmit = async function(event) {
     event.preventDefault()
 
-    const url = "https://striveschool-api.herokuapp.com/api/product/"
+    const url = productId ? "https://striveschool-api.herokuapp.com/api/product/" + productId : "https://striveschool-api.herokuapp.com/api/product/"
 
     const newProduct = {
         name: document.getElementById("name").value,
@@ -34,9 +34,11 @@ const handleSubmit = async function(event) {
 
     console.log(newProduct)
 
+    const method = productId ? "PUT" : "POST"
+
     try {
         const response = await fetch(url, {
-            method: "POST",
+            method,
             body: JSON.stringify(newProduct),
             headers:{
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFkMGNkODJkNTI2MjAwMTViNmRkMTEiLCJpYXQiOjE2MjkzNzY4MTQsImV4cCI6MTYzMDU4NjQxNH0.p_v_v7utMuljc6yzUrCSDzJcKRZo0AJojKtFAuA9528",
@@ -55,8 +57,6 @@ const handleSubmit = async function(event) {
         console.log("Product submitted")
     }
 }
-
-const productId = params.get("id") // the product ID
 
 window.onload = async () => {
     const submitButton = document.getElementById("submitButton")
